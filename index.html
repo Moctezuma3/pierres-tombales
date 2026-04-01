@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les Pierres Tombales — Monuments funéraires sur mesure à Genève. Stèles, dalles, monuments en granite. Accompagnement respectueux et discret.">
+  <title>Les Pierres Tombales — Monuments Funéraires à Genève</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #2980B9;
+      --blue-dark: #1F6EA3;
+      --dark: #162236;
+      --dark2: #1a2b40;
+      --white: #fff;
+      --light: #f7f8fa;
+      --text: #1e1e2e;
+      --text-muted: #5c6a7a;
+      --border: #e2e8ef;
+      --tr: 0.3s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 6px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; transition: all var(--tr); cursor: pointer; border: 2px solid transparent; white-space: nowrap; letter-spacing: 0.2px; }
+    .btn-blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .btn-blue:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(41,128,185,.3); }
+    .btn-outline-blue { background: transparent; color: var(--blue); border-color: var(--blue); }
+    .btn-outline-blue:hover { background: var(--blue); color: #fff; }
+    .btn-ghost-w { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.45); backdrop-filter: blur(8px); }
+    .btn-ghost-w:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.75); }
+    .btn-white { background: #fff; color: var(--blue); border-color: #fff; }
+    .btn-white:hover { background: #eef2f7; }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+
+    /* COMMON */
+    .section { padding: 90px 0; }
+    .stag { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+    .stag svg { width: 16px; height: 16px; }
+    .stag-dark { color: rgba(255,255,255,.65); }
+    .stitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.8vw, 46px); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 16px; letter-spacing: 0; }
+    .stitle em { font-style: normal; color: var(--blue); }
+    .stitle-white { color: #fff; }
+    .stitle-white em { color: #7cc4ed; }
+    .ssub { font-size: 17px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+    .ssub-white { color: rgba(255,255,255,.72); }
+    .center { text-align: center; }
+    .center .ssub { margin: 0 auto; }
+
+    /* TOP BAR */
+    #topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
+      background: var(--blue); height: 38px;
+      display: flex; align-items: center;
+    }
+    .topbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%;
+    }
+    .topbar-left, .topbar-right {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .topbar-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 400; color: rgba(255,255,255,.88);
+      font-family: 'Inter', sans-serif;
+    }
+    .topbar-item svg { width: 13px; height: 13px; flex-shrink: 0; opacity: .8; }
+    .topbar-item a { color: inherit; }
+    .topbar-item a:hover { color: #fff; }
+    .topbar-sep { width: 1px; height: 14px; background: rgba(255,255,255,.25); }
+
+    /* NAV */
+    #nav {
+      position: fixed; top: 38px; left: 0; right: 0; z-index: 1000;
+      background: transparent;
+      transition: background .4s ease, box-shadow .4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    #nav.scrolled-strong { box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+    .nav-inner { display: flex; align-items: center; height: 80px; gap: 32px; }
+
+    /* Logo */
+    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-logo img { height: 58px; width: auto; filter: brightness(0) invert(1); transition: filter .4s ease; }
+    #nav.scrolled .nav-logo img { filter: none; }
+
+    /* Links */
+    .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+    .nav-link {
+      padding: 7px 14px; border-radius: 6px; font-size: 14px; font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,.9); transition: all var(--tr);
+    }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,.12); }
+    .nav-link.active { color: #fff; background: rgba(255,255,255,.15); }
+    #nav.scrolled .nav-link { color: var(--text); }
+    #nav.scrolled .nav-link:hover { color: var(--blue); background: rgba(41,128,185,.07); }
+    #nav.scrolled .nav-link.active { color: var(--blue); background: rgba(41,128,185,.07); }
+
+    /* Right */
+    .nav-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+    .nav-phone {
+      font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,.9); display: flex; align-items: center; gap: 7px;
+      transition: color .4s ease;
+    }
+    .nav-phone svg { width: 15px; height: 15px; }
+    #nav.scrolled .nav-phone { color: var(--text); }
+    /* btn-ghost-nav: white-outlined on transparent, blue on white */
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 20px; border-radius: 6px; font-size: 13px; font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.6);
+      cursor: pointer; transition: all .3s ease; white-space: nowrap;
+    }
+    .btn-nav:hover { background: rgba(255,255,255,.15); border-color: #fff; }
+    #nav.scrolled .btn-nav { background: var(--blue); color: #fff; border-color: var(--blue); }
+    #nav.scrolled .btn-nav:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+
+    /* HERO */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: -4%; background: url('Assets/0ed00f669ceee43b600caeededcfb123fe82eac5.jpg') center/cover no-repeat; will-change: transform; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,30,50,.80) 0%, rgba(20,50,75,.65) 100%); }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 760px; padding: 60px 40px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 18px; border-radius: 50px; margin-bottom: 28px; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 72px); font-weight: 700; color: #fff; line-height: 1.05; letter-spacing: 0; margin-bottom: 22px; }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,.82); line-height: 1.6; margin-bottom: 38px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,.45); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    .hero-scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,.3); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0%, 100% { opacity: .3; transform: scaleY(1); } 50% { opacity: .8; transform: scaleY(.5); } }
+
+    /* BANNER */
+    #banner { background: var(--blue); padding: 20px 0; }
+    .banner-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .banner-text { color: #fff; font-size: 15px; font-weight: 700; }
+    .banner-sep { width: 1px; height: 18px; background: rgba(255,255,255,.3); }
+    .banner-link { color: rgba(255,255,255,.8); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+    .banner-link:hover { color: #fff; }
+
+    /* ACCOMPAGNEMENT */
+    #accompagnement { padding: 90px 0; }
+    .acc-header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+    .acc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .acc-card { text-align: center; padding: 36px 22px; border: 1px solid var(--border); border-radius: 12px; transition: all var(--tr); background: #fff; }
+    .acc-card:hover { border-color: var(--blue); box-shadow: 0 8px 32px rgba(41,128,185,.1); transform: translateY(-4px); }
+    .acc-icon { width: 58px; height: 58px; margin: 0 auto 18px; background: rgba(41,128,185,.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--blue); }
+    .acc-icon svg { width: 26px; height: 26px; }
+    .acc-title { font-size: 15px; font-weight: 900; margin-bottom: 9px; }
+    .acc-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* SPLIT */
+    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .split-img { border-radius: 14px; overflow: hidden; }
+    .split-img img { width: 100%; height: 480px; object-fit: cover; will-change: transform; }
+    .split-list { list-style: none; margin: 26px 0 32px; display: flex; flex-direction: column; gap: 11px; }
+    .split-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text); line-height: 1.5; }
+    .split-list li::before { content: ''; width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--blue); margin-top: 7px; }
+
+    /* CRITÈRES */
+    .criteres-grid { display: grid; grid-template-columns: 5fr 6fr; gap: 72px; align-items: start; }
+    .criteres-img { border-radius: 14px; overflow: hidden; }
+    .criteres-img img { width: 100%; height: 420px; object-fit: cover; will-change: transform; }
+    .ctabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 28px; }
+    .ctab { padding: 12px 20px; font-size: 14px; font-weight: 600; color: var(--text-muted); cursor: pointer; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; background: none; font-family: 'Inter', sans-serif; transition: all var(--tr); }
+    .ctab.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .ctab:hover { color: var(--blue); }
+    .ctab-pane { display: none; }
+    .ctab-pane.active { display: block; }
+    .ctab-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
+    .ctab-feat { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 22px; }
+    .ctab-feat svg { color: var(--blue); width: 17px; height: 17px; flex-shrink: 0; }
+    .crit-block-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+
+    /* RÉALISATIONS */
+    .real-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 24px; }
+    .real-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .real-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,.05); }
+    .real-card-img { height: 260px; overflow: hidden; position: relative; }
+    .real-card-img img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+    .real-card-info { padding: 20px 24px; }
+    .real-card-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; color: var(--text); }
+    .real-card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+    .real-card-mat { font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: .5px; text-transform: uppercase; }
+
+    /* SHOWROOM */
+    .showroom-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .showroom-row-item { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+    .showroom-row-item img { width: 100%; height: 260px; object-fit: cover; display: block; will-change: transform; }
+
+    /* PROCESSUS */
+    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 56px; border-top: 1px solid var(--border); }
+    .process-step { padding: 40px 36px; }
+    .process-step:not(:last-child) { border-right: 1px solid var(--border); }
+    .step-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; flex-shrink: 0; }
+    .step-icon svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .step-title { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.3; }
+    .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .process-step { visibility: visible; }
+    .crit-link { font-size: 14px; font-weight: 600; color: var(--blue); display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; }
+    .crit-link:hover { text-decoration: underline; }
+    .feat-block { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .feat-block h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+    .feat-block p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
+    .feat-block a { font-size: 14px; font-weight: 600; color: var(--blue); }
+    .feat-block a:hover { text-decoration: underline; }
+
+    /* PERSO */
+    #perso { background: #fff; }
+    .perso-layout { display: grid; grid-template-columns: 250px 1fr; gap: 48px; align-items: start; }
+    .ptabs { display: flex; flex-direction: column; gap: 4px; }
+    .ptab { display: flex; align-items: center; gap: 12px; padding: 15px 18px; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-muted); border: 1px solid transparent; background: none; font-family: 'Inter', sans-serif; text-align: left; width: 100%; transition: all var(--tr); }
+    .ptab svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .ptab:hover { background: #fff; border-color: var(--border); color: var(--text); }
+    .ptab.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .perso-pane { display: none; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .perso-pane.active { display: grid; }
+    .perso-img { border-radius: 12px; overflow: hidden; }
+    .perso-img img { width: 100%; height: 340px; object-fit: cover; will-change: transform; }
+    .texture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; border-radius: 12px; overflow: hidden; }
+    .texture-grid img { width: 100%; height: 187px; object-fit: cover; will-change: transform; }
+    /* content badge — blue pill inside perso panels */
+    .content-badge { display: inline-flex; align-items: center; background: rgba(41,128,185,.1); color: var(--blue); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; }
+    .perso-desc .stitle { font-size: clamp(26px, 2.8vw, 38px); margin-bottom: 12px; line-height: 1.1; }
+    .perso-desc .ssub { font-size: 15px; max-width: none; margin-bottom: 16px; }
+    .perso-feat { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 22px; text-decoration: none; }
+    .perso-feat svg { color: var(--blue); width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* STATS */
+    #stats { padding: 90px 0; background: var(--dark); }
+    .stats-header { text-align: center; max-width: 620px; margin: 0 auto 56px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat-card { text-align: center; padding: 36px 20px; background: rgba(255,255,255,.05); border-radius: 12px; border: 1px solid rgba(255,255,255,.07); }
+    .stat-num { font-size: 52px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 10px; }
+    .stat-num span { color: var(--blue); }
+    .stat-label strong { display: block; color: rgba(255,255,255,.85); font-size: 15px; margin-bottom: 4px; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.5; }
+
+    /* MONUMENTS */
+    #monuments { padding: 90px 0; }
+    .monuments-header { text-align: center; max-width: 700px; margin: 0 auto 52px; }
+    .monuments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .mon-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: all var(--tr); }
+    .mon-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.1); border-color: var(--blue); }
+    .mon-img { position: relative; overflow: hidden; }
+    .mon-img img { width: 100%; height: 240px; object-fit: cover; transition: transform .5s ease; }
+    .mon-card:hover .mon-img img { transform: scale(1.05); }
+    .mon-badge { position: absolute; top: 12px; left: 12px; background: var(--blue); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 11px; border-radius: 50px; }
+    .mon-info { padding: 20px; }
+    .mon-name { font-size: 16px; font-weight: 900; margin-bottom: 6px; }
+    .mon-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+    .mon-link { font-size: 13px; font-weight: 700; color: var(--blue); display: flex; align-items: center; gap: 5px; }
+    .mon-link svg { width: 13px; height: 13px; transition: transform var(--tr); }
+    .mon-card:hover .mon-link svg { transform: translateX(4px); }
+    .monuments-cta { text-align: center; margin-top: 44px; }
+
+    /* CTA BAND */
+    #cta-band { position: relative; padding: 90px 0; overflow: hidden; }
+    .cta-band-bg { position: absolute; inset: 0; background: url('Assets/0ed00f669ceee43b600caeededcfb123fe82eac5.jpg') center/cover no-repeat; }
+    .cta-band-bg::after { content: ''; position: absolute; inset: 0; background: rgba(22,34,54,.85); }
+    .cta-band-inner { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; }
+    .cta-band-inner .stitle { font-size: clamp(26px, 3.5vw, 44px); color: #fff; margin-bottom: 14px; }
+    .cta-band-inner .ssub { color: rgba(255,255,255,.72); margin: 0 auto 34px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* CONTACT */
+    #contact { padding: 90px 0; background: var(--light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; padding: 17px 0; border-bottom: 1px solid var(--border); }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon { width: 42px; height: 42px; border-radius: 10px; background: rgba(41,128,185,.1); display: flex; align-items: center; justify-content: center; color: var(--blue); flex-shrink: 0; }
+    .contact-icon svg { width: 18px; height: 18px; }
+    .c-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 3px; }
+    .c-value { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 13px; font-weight: 700; color: var(--text); }
+    .form-input { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 15px; font-family: 'Inter', sans-serif; color: var(--text); background: #fff; transition: border-color var(--tr); }
+    .form-input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(41,128,185,.1); }
+    .form-input::placeholder { color: #b0b8c4; }
+    textarea.form-input { resize: vertical; min-height: 120px; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c6a7a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+    .form-note { font-size: 13px; color: var(--text-muted); }
+    .form-note a { color: var(--blue); text-decoration: underline; }
+
+    /* FOOTER */
+    #footer { background: var(--dark); padding: 70px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1.1fr 1.1fr 1.4fr; gap: 44px; margin-bottom: 52px; }
+    .footer-logo { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }
+    .footer-logo img { height: 40px; filter: brightness(0) invert(1); opacity: .7; }
+    .footer-logo-text { font-size: 12px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.8); line-height: 1.2; }
+    .footer-logo-text span { display: block; font-weight: 400; font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,.4); }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.7; max-width: 270px; }
+    .footer-col h4 { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.8); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color var(--tr); }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-row { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 12px; }
+    .footer-contact-row svg { color: var(--blue); width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-row span { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.5; }
+    .footer-bottom { padding-top: 26px; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,.3); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; color: rgba(255,255,255,.3); transition: color var(--tr); }
+    .footer-legal a:hover { color: rgba(255,255,255,.65); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); }
+    .reveal.vis { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .reveal-l { opacity: 0; transform: translateX(-28px); }
+    .reveal-l.vis { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .reveal-r { opacity: 0; transform: translateX(28px); }
+    .reveal-r.vis { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .d1 { transition-delay: .1s !important; }
+    .d2 { transition-delay: .2s !important; }
+    .d3 { transition-delay: .3s !important; }
+    .d4 { transition-delay: .4s !important; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .acc-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      #topbar { display: none; }
+      #nav { top: 0; }
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .nav-links, .nav-right { display: none; }
+      .split-grid, .criteres-grid, .contact-grid, .perso-layout, .perso-pane { grid-template-columns: 1fr !important; }
+      .monuments-grid { grid-template-columns: repeat(2, 1fr); }
+      .acc-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .monuments-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <span class="topbar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Rue de la Pierre-à-Mazel 2, 1204 Genève
+        </span>
+        <span class="topbar-sep"></span>
+        <span class="topbar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Lun–Ven 8h–18h &nbsp;·&nbsp; Sam 9h–13h
+        </span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contact@pierstombales.ch">contact@pierstombales.ch</a>
+        </span>
+        <span class="topbar-sep"></span>
+        <span class="topbar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.01 2.82 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.49a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+41223000000">+41 22 300 00 00</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="Assets/logo.png" alt="Les Pierres Tombales">
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Accueil</a>
+        <a href="#pierres" class="nav-link">Services</a>
+        <a href="#criteres" class="nav-link">Notre expertise</a>
+        <a href="#monuments" class="nav-link">Réalisations</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="#contact" class="btn-nav">Devis Gratuit</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Monuments funéraires à Genève
+    </div>
+    <h1 class="hero-title">Créez un hommage unique<br>et personnalisé</h1>
+    <p class="hero-sub">À Genève, nous créons des pierres tombales uniques et personnalisées pour honorer vos proches avec dignité et soin. Chaque monument reflète votre hommage et vos souvenirs.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-blue">
+        Devis Gratuit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#monuments" class="btn btn-ghost-w">Voir nos réalisations</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
+</section>
+
+<!-- ============================================================ BANNER -->
+<div id="banner">
+  <div class="container">
+    <div class="banner-inner">
+      <p class="banner-text">Votre expert en monuments funéraires à Genève &amp; Suisse romande depuis plus de 15 ans</p>
+      <div class="banner-sep"></div>
+      <a href="#contact" class="banner-link">Consultation gratuite sous 48h &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ ACCOMPAGNEMENT -->
+<section id="accompagnement" class="section">
+  <div class="container">
+    <div class="acc-header reveal">
+      <div class="stag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Notre engagement
+      </div>
+      <h2 class="stitle">Un accompagnement de <em>A à Z</em>,<br>respectueux et discret</h2>
+      <p class="ssub">Nous vous guidons à chaque étape, de la conception à la pose, avec toute la bienveillance que mérite ce moment particulier.</p>
+    </div>
+    <div class="acc-grid">
+      <div class="acc-card reveal d1">
+        <div class="acc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="acc-title">Disponible 24h/24 et 7j/7</h3>
+        <p class="acc-text">Nous sommes à votre écoute à tout moment, même en dehors des heures habituelles d'ouverture.</p>
+      </div>
+      <div class="acc-card reveal d2">
+        <div class="acc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3 class="acc-title">Accompagnement bienveillant</h3>
+        <p class="acc-text">Notre équipe empathique vous soutient avec délicatesse dans cette période difficile.</p>
+      </div>
+      <div class="acc-card reveal d3">
+        <div class="acc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="acc-title">Qualité garantie</h3>
+        <p class="acc-text">Nos monuments sont façonnés dans les granites les plus nobles, avec une finition irréprochable.</p>
+      </div>
+      <div class="acc-card reveal d4">
+        <div class="acc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="acc-title">Genève &amp; Suisse romande</h3>
+        <p class="acc-text">Nous intervenons dans tous les cimetières de Genève et de toute la Suisse romande.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PIERRES TOMBALES GENÈVE -->
+<section id="pierres" class="section" style="background:var(--light);">
+  <div class="container">
+    <div class="split-grid">
+      <div class="reveal-l">
+        <div class="stag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Monuments funéraires
+        </div>
+        <h2 class="stitle">Les <em>pierres tombales</em> à Genève</h2>
+        <p class="ssub">Chaque monument funéraire que nous réalisons répond à des critères précis d'excellence, rigoureusement sélectionnés pour vous proposer des matériaux durables et respectueux de l'environnement. Nos créations seront le moyen idéal pour honorer la vie et les passions et la richesse de leurs beaux disparus.</p>
+
+        <div class="feat-block">
+          <h4>Coût Transparent</h4>
+          <p>Tarifs complexes fini. L'accès à notre service de rénovation à partir de <strong>2 300 CHF</strong> (proportionnel fini et résultat est livré sans surprises).</p>
+          <a href="#contact">En savoir plus &gt;</a>
+        </div>
+
+        <div class="feat-block">
+          <h4>Paiement en plusieurs fois possible</h4>
+          <p>Vous avez la possibilité de payer votre monument en plusieurs fois sans frais, afin de vous accompagner sereinement dans cette période difficile.</p>
+          <a href="#contact">En savoir plus &gt;</a>
+        </div>
+      </div>
+      <div class="split-img reveal-r">
+        <img src="Assets/4924e105f954d59d71e22061ea9dac864f8a585b.jpg" alt="Les pierres tombales à Genève" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CRITÈRES -->
+<section id="criteres" class="section">
+  <div class="container">
+    <div class="reveal center" style="margin-bottom:56px;">
+      <div class="stag" style="justify-content:center;text-transform:none;letter-spacing:0.5px;font-size:13px;">
+        <img src="Assets/icone.png" alt="" style="width:20px;height:20px;opacity:.75;">
+        Toujours à vos côtés !
+      </div>
+      <h2 class="stitle" style="text-align:center;">Des créations <em>personnalisées</em> pour honorer<br>la mémoire de vos proches à Genève</h2>
+    </div>
+    <div class="criteres-grid">
+      <div class="criteres-img reveal-l">
+        <img src="Assets/e327d83939c722d268fb479e6b32b6d035ce7559.png" alt="Monuments funéraires Genève" loading="lazy">
+      </div>
+      <div class="reveal-r">
+
+        <!-- Bloc 1 : Histoire et Personnalisation -->
+        <div class="crit-block" style="margin-bottom:36px;">
+          <h3 class="crit-block-title">Histoire et Personnalisation</h3>
+          <p class="ctab-text">À Cernay et dans tout Genève, nous créons des monuments funéraires uniques et personnalisés pour honorer la mémoire de vos proches. Conçus avec soin, le monument vous aidera à vos aspirations et votre budget, tout en reflétant l'histoire et la singularité de chaque vie.</p>
+          <a href="#contact" class="crit-link">cliquez ici &gt;</a>
+        </div>
+
+        <!-- Bloc 2 : Qualité et Pose -->
+        <div class="crit-block">
+          <h3 class="crit-block-title">Qualité et Pose</h3>
+          <p class="ctab-text">De la sélection méticuleuse des matériaux à la pose soignée assurée par nos experts, nous vous offrons un accompagnement complet et rassurant. Chaque monument est pensé pour être digne, durable et en parfaite harmonie avec son environnement.</p>
+          <p class="ctab-text">Vous guidez avec respect et écoute afin de créer un hommage qui symbolise pleinement l'amour et le souvenir que vous portez à vos proches disparus.</p>
+          <a href="tel:+41225528313" class="crit-link">Appelez-nous pour votre question : +41 (022) 552 83 13</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PERSONNALISATION -->
+<section id="perso" class="section" style="background:var(--light);">
+  <div class="container">
+    <div class="reveal center" style="margin-bottom:56px;">
+      <div class="stag" style="justify-content:center;text-transform:none;letter-spacing:0.5px;font-size:13px;">
+        <img src="Assets/icone.png" alt="" style="width:22px;height:22px;opacity:.75;">
+        Détails uniques
+      </div>
+      <h2 class="stitle" style="text-align:center;">Personnalisez chaque aspect pour un hommage<br><em>qui vous ressemble</em></h2>
+    </div>
+    <div class="perso-layout">
+      <div class="ptabs reveal-l">
+        <button class="ptab active" data-pt="gravure">
+          <!-- person/text icon for engraving -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Gravure &amp; lettrage
+        </button>
+        <button class="ptab" data-pt="forme">
+          <!-- house/monument icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Forme de la stèle
+        </button>
+        <button class="ptab" data-pt="ornements">
+          <!-- ornament/badge icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Ornements
+        </button>
+        <button class="ptab" data-pt="couleur">
+          <!-- layers/texture icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Couleur &amp; texture
+        </button>
+      </div>
+
+      <div id="perso-content" class="reveal-r">
+        <!-- Gravure -->
+        <div class="perso-pane active" id="pp-gravure">
+          <div class="perso-img">
+            <img src="Assets/1d810c061718f79806eef0e75f45cc7be87df461.jpg" alt="Gravure & lettrage" loading="lazy">
+          </div>
+          <div class="perso-desc">
+            <span class="content-badge">Gravure &amp; lettrage</span>
+            <h3 class="stitle">Donnez du caractère à<br>votre monument</h3>
+            <p class="ssub">Choisissez la forme qui reflète la personnalité de vos proches. Une stèle unique, harmonieuse et symbolique.</p>
+            <a href="#contact" class="perso-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+              Forme unique adaptée à votre hommage
+            </a>
+            <a href="#contact" class="btn btn-blue" style="width:100%;justify-content:center;">Devis Gratuit &gt;</a>
+          </div>
+        </div>
+
+        <!-- Forme -->
+        <div class="perso-pane" id="pp-forme">
+          <div class="perso-img">
+            <img src="Assets/17e64ee92541fb52c12bd9aeb77b70295adecc54.jpg" alt="Forme de la stèle" loading="lazy">
+          </div>
+          <div class="perso-desc">
+            <span class="content-badge">Gravure &amp; lettrage</span>
+            <h3 class="stitle">Donnez du caractère à<br>votre monument</h3>
+            <p class="ssub">Choisissez la forme qui reflète la personnalité de vos proches. Une stèle unique, harmonieuse et symbolique.</p>
+            <a href="#contact" class="perso-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+              Forme unique adaptée à votre hommage
+            </a>
+            <a href="#contact" class="btn btn-blue" style="width:100%;justify-content:center;">Devis Gratuit &gt;</a>
+          </div>
+        </div>
+
+        <!-- Ornements -->
+        <div class="perso-pane" id="pp-ornements">
+          <div class="perso-img">
+            <img src="Assets/7ba482b3393e4d1a057cde0c5c69eb7f61f0757a.jpg" alt="Ornements" loading="lazy">
+          </div>
+          <div class="perso-desc">
+            <span class="content-badge">Gravure &amp; lettrage</span>
+            <h3 class="stitle">Donnez du caractère à<br>votre monument</h3>
+            <p class="ssub">Choisissez la forme qui reflète la personnalité de vos proches. Une stèle unique, harmonieuse et symbolique.</p>
+            <a href="#contact" class="perso-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+              Forme unique adaptée à votre hommage
+            </a>
+            <a href="#contact" class="btn btn-blue" style="width:100%;justify-content:center;">Devis Gratuit &gt;</a>
+          </div>
+        </div>
+
+        <!-- Couleur -->
+        <div class="perso-pane" id="pp-couleur">
+          <div class="texture-grid">
+            <img src="Assets/a2b2c4bbf2f7cabe1f5f4e31d8020afdb9b7854c.jpg" alt="Granite gris clair" loading="lazy">
+            <img src="Assets/aa1c5f362a900a7e5acc2b2fe1bd90ad855a5723.jpg" alt="Granite noir" loading="lazy">
+            <img src="Assets/59b9669b8d8a885899530a3df2eeac35a6f89eb0.png" alt="Granite beige" loading="lazy">
+            <img src="Assets/6fd048ac2380b93343dfa47ebda4f84365712891.png" alt="Granite orange" loading="lazy">
+          </div>
+          <div class="perso-desc">
+            <span class="content-badge">Gravure &amp; lettrage</span>
+            <h3 class="stitle">Donnez du caractère à<br>votre monument</h3>
+            <p class="ssub">Choisissez la forme qui reflète la personnalité de vos proches. Une stèle unique, harmonieuse et symbolique.</p>
+            <a href="#contact" class="perso-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+              Forme unique adaptée à votre hommage
+            </a>
+            <a href="#contact" class="btn btn-blue" style="width:100%;justify-content:center;">Devis Gratuit &gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRADITION & CROYANCES -->
+<section id="tradition" style="background:#f0f6ff;padding:72px 0;">
+  <div class="container">
+    <div class="split-grid">
+      <div class="reveal-l">
+        <div class="stag">
+          <img src="Assets/icone.png" alt="" style="width:20px;height:20px;opacity:.75;">
+          Respect universel
+        </div>
+        <h2 class="stitle">Nous accompagnons toutes <em>les traditions et croyances.</em></h2>
+        <p class="ssub">Nous réalisons des monuments funéraires respectueux de toutes les religions, en tenant compte des rites et coutumes spécifiques, pour honorer chaque mémoire avec dignité.</p>
+        <a href="#contact" class="btn btn-blue" style="margin-top:8px;">Prendre Contact &gt;</a>
+      </div>
+      <div class="split-img reveal-r">
+        <img src="Assets/7181f60dbc7314529d039608fbfec1041ea7ada0.jpg" alt="Traditions et croyances" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ RÉALISATIONS -->
+<section id="monuments" class="section" style="background:var(--light);">
+  <div class="container">
+    <div class="real-header reveal">
+      <div>
+        <div class="stag">
+          <img src="Assets/icone.png" alt="" style="width:20px;height:20px;opacity:.75;">
+          Nos réalisations
+        </div>
+        <h2 class="stitle">Découvrez nos monuments funéraires uniques<br>créés pour <em>chaque hommage</em></h2>
+      </div>
+      <a href="#contact" class="btn btn-outline-blue btn-sm" style="flex-shrink:0;align-self:flex-end;">Voir Plus &gt;</a>
+    </div>
+    <div class="real-grid">
+      <div class="real-card reveal d1">
+        <div class="real-card-img"><img src="Assets/17e64ee92541fb52c12bd9aeb77b70295adecc54.jpg" alt="Monument Noir Absolu" loading="lazy"></div>
+        <div class="real-card-info">
+          <h3 class="real-card-title">Monument triple réalisé en granit 'Noir Absolu'</h3>
+          <p class="real-card-desc">Trois stèles gracieuses et personnalisées d'une gravure surmontent ce monument.</p>
+          <span class="real-card-mat">Granit Noir Absolu</span>
+        </div>
+      </div>
+      <div class="real-card reveal d2">
+        <div class="real-card-img"><img src="Assets/bfc5fc2612488c339f84f2ca0e025949caf740bb.jpg" alt="Monument Pietra del Monte" loading="lazy"></div>
+        <div class="real-card-info">
+          <h3 class="real-card-title">Monument réalisé en granit 'Pietra del Monte' en finition brut</h3>
+          <p class="real-card-desc">Le détail sur les stèles est fin et accompagné d'un ornement floral spécifique.</p>
+          <span class="real-card-mat">Granit Pietra del Monte</span>
+        </div>
+      </div>
+      <div class="real-card reveal d1">
+        <div class="real-card-img"><img src="Assets/aca44576192b7c373c5e0430b16becb6d3bbb72e.jpg" alt="Monument Silver Cristal" loading="lazy"></div>
+        <div class="real-card-info">
+          <h3 class="real-card-title">Monument plat en granit 'Silver Cristal'</h3>
+          <p class="real-card-desc">Conception horizontale élégante avec dalles arrondies et gravure fine sur le dessus.</p>
+          <span class="real-card-mat">Granit Silver Cristal</span>
+        </div>
+      </div>
+      <div class="real-card reveal d2">
+        <div class="real-card-img"><img src="Assets/d774bbe0a339a90fbec53cfde12410ae7704002c (1).jpg" alt="Monument Himalaya" loading="lazy"></div>
+        <div class="real-card-info">
+          <h3 class="real-card-title">Ensemble funéraire réalisé en granit 'Himalaya'</h3>
+          <p class="real-card-desc">Ensemble stèle et dalle assortis, finition polie brillant, avec encadrement gravé.</p>
+          <span class="real-card-mat">Granit Himalaya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SHOWROOM -->
+<section id="showroom" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="reveal center" style="max-width:640px;margin:0 auto 40px;">
+      <div class="stag" style="justify-content:center;text-transform:none;letter-spacing:0.5px;font-size:13px;">
+        <img src="Assets/icone.png" alt="" style="width:20px;height:20px;opacity:.75;">
+        Notre showroom
+      </div>
+      <h2 class="stitle" style="text-align:center;">L'expérience en <em>showroom</em></h2>
+      <p class="ssub" style="text-align:center;">Visitez notre showroom à Carouge et découvrez des monuments funéraires uniques. Choisissez parmi des pierres de qualité avec un accompagnement personnalisé.</p>
+    </div>
+    <div class="showroom-row reveal">
+      <div class="showroom-row-item"><img src="Assets/13ed3aad5c668a730b487cff832d0178901d4aea.jpg" alt="Showroom monuments" loading="lazy"></div>
+      <div class="showroom-row-item"><img src="Assets/ef6fb0183ef85a2c4b42a70781a998addf1f8f09.png" alt="Showroom intérieur" loading="lazy"></div>
+      <div class="showroom-row-item"><img src="Assets/284323718288eaaa0178e09bfa70c33fa3953081.png" alt="Showroom Carouge" loading="lazy"></div>
+    </div>
+    <div style="text-align:center;" class="reveal">
+      <a href="#contact" class="btn btn-blue">Prendre Contact &gt;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROCESSUS -->
+<section id="process" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="reveal center" style="max-width:720px;margin:0 auto;">
+      <div class="stag" style="justify-content:center;text-transform:none;letter-spacing:0.5px;font-size:13px;">
+        <img src="Assets/icone.png" alt="" style="width:20px;height:20px;opacity:.75;">
+        Accompagnement complet
+      </div>
+      <h2 class="stitle" style="text-align:center;">De la sélection à la pose, nous vous guidons<br><em>à chaque étape</em></h2>
+      <p class="ssub" style="text-align:center;">Nous vous accompagnons dans toutes les étapes de la création de votre monument : du choix du modèle à la fabrication et pose soignée, en passant par la gestion complète des démarches administratives.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" id="step-1">
+        <div class="step-icon">
+          <!-- Loupe / recherche — choix du monument -->
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="step-title">Choix du monument</div>
+        <p class="step-desc">Sélectionnez le modèle et la pierre qui reflètent le mieux vos souhaits.</p>
+      </div>
+      <div class="process-step" id="step-2">
+        <div class="step-icon">
+          <!-- Marteau / pose -->
+          <svg viewBox="0 0 24 24"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 5l-.34 3.57a3 3 0 01-.25.87l-1.05 2.11"/></svg>
+        </div>
+        <div class="step-title">Fabrication &amp; pose soignée</div>
+        <p class="step-desc">Nos experts réalisent et posent chaque monument avec précision et soin.</p>
+      </div>
+      <div class="process-step" id="step-3">
+        <div class="step-icon">
+          <!-- Clipboard check — démarches admin -->
+          <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="step-title">Gestion des démarches administratives</div>
+        <p class="step-desc">Nous prenons en charge les échanges avec mairie et cimetière, demandes d'autorisation et transmission des plans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT -->
+<section id="contact" class="section" style="background:#fff;">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 56px;" class="reveal">
+      <div class="stag" style="justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.01 2.82 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.49a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Nous contacter
+      </div>
+      <h2 class="stitle">Pour vous aider au mieux, merci<br>de remplir ce formulaire</h2>
+      <p class="ssub" style="margin:0 auto;">Notre équipe vous répondra dans les plus brefs délais avec toute l'attention que vous méritez.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Form LEFT -->
+      <div class="reveal-l">
+        <form class="form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Prénom *</label><input type="text" class="form-input" placeholder="Votre prénom"></div>
+            <div class="form-group"><label class="form-label">Nom *</label><input type="text" class="form-input" placeholder="Votre nom"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="votre@email.ch"></div>
+          <div class="form-group"><label class="form-label">Téléphone</label><input type="tel" class="form-input" placeholder="+41 22 000 00 00"></div>
+          <div class="form-group">
+            <label class="form-label">Type de monument</label>
+            <select class="form-input form-select">
+              <option value="">Sélectionnez un type</option>
+              <option>Stèle verticale</option>
+              <option>Dalle funéraire</option>
+              <option>Croix en granite</option>
+              <option>Monument plat</option>
+              <option>Columbarium</option>
+              <option>Rénovation</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Message *</label><textarea class="form-input" placeholder="Décrivez votre projet, vos souhaits..."></textarea></div>
+          <p class="form-note">En soumettant ce formulaire, vous acceptez notre <a href="#">politique de confidentialité</a>.</p>
+          <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center;">
+            Envoyer ma demande
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+      <!-- Images + info RIGHT -->
+      <div class="reveal-r" style="display:flex;flex-direction:column;gap:16px;">
+        <div style="border-radius:14px;overflow:hidden;flex:1;">
+          <img src="Assets/0ed00f669ceee43b600caeededcfb123fe82eac5.jpg" alt="Cimetière parc" style="width:100%;height:260px;object-fit:cover;" loading="lazy">
+        </div>
+        <div style="border-radius:14px;overflow:hidden;flex:1;">
+          <img src="Assets/ef6fb0183ef85a2c4b42a70781a998addf1f8f09.png" alt="Showroom Genève" style="width:100%;height:220px;object-fit:cover;" loading="lazy">
+        </div>
+        <div style="background:var(--light);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;">
+          <div class="contact-item" style="padding:8px 0;">
+            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.01 2.82 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.49a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="c-label">Téléphone</div><div class="c-value">+41 22 300 00 00</div></div>
+          </div>
+          <div class="contact-item" style="padding:8px 0;">
+            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="c-label">Adresse</div><div class="c-value">Rue de la Pierre-à-Mazel 2, 1204 Genève</div></div>
+          </div>
+          <div class="contact-item" style="padding:8px 0;border-bottom:none;">
+            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div><div class="c-label">Horaires</div><div class="c-value">Lun–Ven 8h–18h · Sam 9h–13h</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="Assets/icone.png" alt="Les Pierres Tombales">
+          <div class="footer-logo-text">Les Pierres Tombales<span>Monuments funéraires</span></div>
+        </div>
+        <p>Spécialiste des monuments funéraires sur mesure en Suisse romande depuis plus de 15 ans. Un savoir-faire artisanal au service du souvenir.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#pierres">Stèles &amp; monuments</a></li>
+          <li><a href="#pierres">Dalles funéraires</a></li>
+          <li><a href="#perso">Gravure &amp; lettrage</a></li>
+          <li><a href="#perso">Ornements</a></li>
+          <li><a href="#pierres">Rénovation</a></li>
+          <li><a href="#pierres">Pose &amp; entretien</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul class="footer-links">
+          <li><a href="#">À propos</a></li>
+          <li><a href="#monuments">Réalisations</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Rue de la Pierre-à-Mazel 2<br>1204 Genève, Suisse</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.01 2.82 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.49a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+41 22 300 00 00</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>contact@pierstombales.ch</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Lun–Ven 8h–18h · Sam 9h–13h</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 Les Pierres Tombales. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Nav scroll — transparent → white
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', scrollY > 60);
+    nav.classList.toggle('scrolled-strong', scrollY > 120);
+  });
+
+  // Scroll reveal
+  document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => {
+    ScrollTrigger.create({ trigger: el, start: 'top 88%', onEnter: () => el.classList.add('vis') });
+  });
+
+  // Process steps — stagger séquentiel au scroll
+  var processSteps = document.querySelectorAll('.process-step');
+  gsap.set(processSteps, { opacity: 0, y: 40 });
+  ScrollTrigger.create({
+    trigger: '.process-steps',
+    start: 'top 78%',
+    once: true,
+    onEnter: function() {
+      gsap.to(processSteps, {
+        opacity: 1, y: 0,
+        duration: 0.75,
+        ease: 'power3.out',
+        stagger: 0.22
+      });
+    }
+  });
+
+  // Hero parallax
+  gsap.to('.hero-bg', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  // Personnalisation tabs
+  document.querySelectorAll('.ptab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.perso-pane').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const pane = document.getElementById('pp-' + tab.dataset.pt);
+      pane.classList.add('active');
+      gsap.fromTo(pane, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' });
+    });
+  });
+
+  // Stats counter
+  ScrollTrigger.create({
+    trigger: '#stats', start: 'top 72%', once: true,
+    onEnter: () => {
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix;
+        let cur = 0;
+        const step = target / 50;
+        const t = setInterval(() => {
+          cur = Math.min(cur + step, target);
+          el.innerHTML = Math.floor(cur) + '<span>' + suffix + '</span>';
+          if (cur >= target) clearInterval(t);
+        }, 28);
+      });
+    }
+  });
+
+  // ===== MOUSE PARALLAX =====
+
+  // Hero — suit la souris globalement
+  const heroBgEl = document.querySelector('.hero-bg');
+  document.addEventListener('mousemove', function(e) {
+    const xRatio = (e.clientX / window.innerWidth - 0.5);
+    const yRatio = (e.clientY / window.innerHeight - 0.5);
+    gsap.to(heroBgEl, {
+      x: xRatio * 30,
+      y: yRatio * 20,
+      duration: 1.8,
+      ease: 'power2.out'
+    });
+  });
+
+  // Images sections — parallax local au survol
+  document.querySelectorAll('.split-img, .criteres-img, .showroom-row-item, .real-card-img, .perso-img, .texture-grid').forEach(function(wrap) {
+    var imgs = wrap.tagName === 'IMG' ? [wrap] : wrap.querySelectorAll('img');
+    if (!imgs.length) return;
+
+    wrap.addEventListener('mouseenter', function() {
+      imgs.forEach(function(img) {
+        gsap.to(img, { scale: 1.08, duration: 0.4, ease: 'power2.out' });
+      });
+    });
+
+    wrap.addEventListener('mousemove', function(e) {
+      var r = wrap.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width - 0.5) * 20;
+      var y = ((e.clientY - r.top) / r.height - 0.5) * 14;
+      imgs.forEach(function(img) {
+        gsap.to(img, { x: x, y: y, duration: 0.35, ease: 'power2.out' });
+      });
+    });
+
+    wrap.addEventListener('mouseleave', function() {
+      imgs.forEach(function(img) {
+        gsap.to(img, { x: 0, y: 0, scale: 1, duration: 0.7, ease: 'power3.out' });
+      });
+    });
+  });
+
+  // Logo active link on scroll
+  const sections = document.querySelectorAll('section[id], div[id="banner"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (scrollY >= s.offsetTop - 100) current = s.id; });
+    document.querySelectorAll('.nav-link').forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === '#' + current || (current === '' && l.getAttribute('href') === '#')) l.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
