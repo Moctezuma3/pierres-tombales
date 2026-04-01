@@ -215,9 +215,12 @@
     .crit-link:hover { text-decoration: underline; }
     .feat-block { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
     .feat-block h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; font-family: 'Inter', sans-serif; }
-    .feat-block p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
-    .feat-block a { font-size: 14px; font-weight: 600; color: var(--blue); }
-    .feat-block a:hover { text-decoration: underline; }
+    .feat-block ul { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-direction: column; gap: 6px; }
+    .feat-block ul li { font-size: 14px; color: var(--text-muted); line-height: 1.6; padding-left: 18px; position: relative; }
+    .feat-block ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .crit-block ul { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 8px; }
+    .crit-block ul li { font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 20px; position: relative; }
+    .crit-block ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
 
     /* PERSO */
     #perso { background: #fff; }
@@ -500,14 +503,22 @@
 
         <div class="feat-block">
           <h4>Coût Transparent</h4>
-          <p>Fini les tarifs opaques. Nos monuments funéraires sont accessibles à partir de <strong>2 300 CHF</strong>, avec un devis détaillé et un résultat livré sans surprises.</p>
-          <a href="#contact">En savoir plus &gt;</a>
+          <ul>
+            <li>Devis détaillé et gratuit</li>
+            <li>À partir de <strong>2 300 CHF</strong></li>
+            <li>Résultat livré sans surprises</li>
+          </ul>
+          <a href="#contact" class="btn btn-blue btn-sm">Demander un devis</a>
         </div>
 
         <div class="feat-block">
           <h4>Paiement en plusieurs fois possible</h4>
-          <p>Vous avez la possibilité de payer votre monument en plusieurs fois sans frais, afin de vous accompagner sereinement dans cette période difficile.</p>
-          <a href="#contact">En savoir plus &gt;</a>
+          <ul>
+            <li>Paiement fractionné sans frais</li>
+            <li>Adapté à votre situation</li>
+            <li>Accompagnement serein dans cette période</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-blue btn-sm">En savoir plus</a>
         </div>
       </div>
       <div class="split-img reveal-r">
@@ -536,16 +547,24 @@
         <!-- Bloc 1 : Histoire et Personnalisation -->
         <div class="crit-block" style="margin-bottom:36px;">
           <h3 class="crit-block-title">Histoire et Personnalisation</h3>
-          <p class="ctab-text">À Cernay et dans tout Genève, nous créons des monuments funéraires uniques et personnalisés pour honorer la mémoire de vos proches. Conçus avec soin, le monument vous aidera à vos aspirations et votre budget, tout en reflétant l'histoire et la singularité de chaque vie.</p>
-          <a href="#contact" class="crit-link">cliquez ici &gt;</a>
+          <ul>
+            <li>Monuments uniques créés à Genève</li>
+            <li>Reflète l'histoire et la singularité de chaque vie</li>
+            <li>Adapté à vos aspirations et à votre budget</li>
+          </ul>
+          <a href="#contact" class="btn btn-blue btn-sm">Nous contacter</a>
         </div>
 
         <!-- Bloc 2 : Qualité et Pose -->
         <div class="crit-block">
           <h3 class="crit-block-title">Qualité et Pose</h3>
-          <p class="ctab-text">De la sélection méticuleuse des matériaux à la pose soignée assurée par nos experts, nous vous offrons un accompagnement complet et rassurant. Chaque monument est pensé pour être digne, durable et en parfaite harmonie avec son environnement.</p>
-          <p class="ctab-text">Nous vous guidons avec respect et écoute afin de créer un hommage qui symbolise pleinement l'amour et le souvenir que vous portez à vos proches disparus.</p>
-          <a href="tel:+41225528313" class="crit-link">Appelez-nous pour votre question : +41 (022) 552 83 13</a>
+          <ul>
+            <li>Matériaux rigoureusement sélectionnés</li>
+            <li>Pose soignée assurée par nos experts</li>
+            <li>Hommage digne, durable et harmonieux</li>
+            <li>Accompagnement respectueux à chaque étape</li>
+          </ul>
+          <a href="tel:+41225528313" class="btn btn-outline-blue btn-sm">Appeler le +41 (022) 552 83 13</a>
         </div>
       </div>
     </div>
